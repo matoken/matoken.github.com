@@ -1,0 +1,391 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
+    <link href="css/impress.css" rel="stylesheet" />
+</head>
+<body>
+<div id="impress" class="impress-not-supported">
+    <div class="fallback-message">
+        <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+        <p>For the best experience please use the latest <b>Chrome</b> or <b>Safari</b> browser. Firefox 10 (to be released soon) will also handle it.</p>
+    </div>
+
+<div id="title" class="step" data-y="0" data-x="0">
+<h2>10月のオフな集まり(第123回)</h2>
+
+<p>独立行政法人情報処理推進機構(IPA)会議室A <br />
+KenichiroMATOHARA(@matoken) <br />
+http://matoken.org/  </p>
+
+</div>
+<div class="step" data-y="0" data-x="1200">
+<h2>今回のネタ</h2>
+
+<ul>
+<li>PQI AirCard を試す</li>
+<li>Amazon Glacier で遠隔backup</li>
+</ul>
+
+</div>
+<div class="step" data-y="0" data-x="2400">
+<h2>PQI AirCard</h2>
+
+<ul>
+<li>SD-Wifi Card</li>
+<li><ul>
+<li>無線LAN の付いたSD Card</li>
+</ul></li>
+<li><ul>
+<li>PC やカメラからは普通のSD Card に見える</li>
+</ul></li>
+<li><ul>
+<li>Wifi 経由で写真の取り込みが出来る</li>
+</ul></li>
+<li><ul>
+<li>似た製品にEye-fi / TREK FluCard / Tosiba FlashAir などがある</li>
+</ul></li>
+</ul>
+
+</div>
+<div class="step" data-y="0" data-x="3600">
+<h2>写真</h2>
+
+<p><img src="./IMGP2726.JPG"></p>
+
+</div>
+<div class="step" data-y="0" data-x="4800">
+<h2>写真</h2>
+
+<p><img src="./IMGP2727.JPG"></p>
+
+</div>
+<div class="step" data-y="800" data-x="0">
+<h2>類似製品との違い</h2>
+
+<ul>
+<li>Eye-Fi</li>
+<li><ul>
+<li>基本的に全部アップ</li>
+</ul></li>
+<li>TREK FluCard / Tosiba FlashAir</li>
+<li><ul>
+<li>一枚ずつ選択してダウンロード</li>
+</ul></li>
+<li><ul>
+<li>ブラウザからもアクセス可能</li>
+</ul></li>
+</ul>
+
+</div>
+<div class="step" data-y="800" data-x="1200">
+<h2>PQI AirCard</h2>
+
+<ul>
+<li>10/1 発売，秋葉原では9/29 には売られていた</li>
+<li>TREK FluCard / Tosiba FlashAir に似ている</li>
+<li>設定変更もブラウザから出来る</li>
+<li>ストレージは内蔵されていない，microSD を挿して使う</li>
+<li>各種メディア対応(音楽，動画など)</li>
+</ul>
+
+</div>
+<div class="step" data-y="800" data-x="2400">
+<h2>対応フォーマット</h2>
+
+<p><img src="pqi_format.png "> <br />
+<a href="http://jp.pqigroup.com/prod_driver.aspx?mnuid=1296&amp;modid=145&amp;prodid=500">Datasheet より</a></p>
+
+</div>
+<div class="step" data-y="800" data-x="3600">
+<h2>使い勝手</h2>
+
+<ul>
+<li>iOS アプリ</li>
+<li><ul>
+<li>前もってCard のAP に繋いでおく必要がある(面倒)</li>
+</ul></li>
+<li><ul>
+<li>写真ダウンロードにプログレスがでないので不安</li>
+</ul></li>
+<li><ul>
+<li>アップロードにはプログレスが出る</li>
+</ul></li>
+<li>Android アプリ</li>
+<li><ul>
+<li>Android 版は手元ではうまく動かない?</li>
+</ul></li>
+<li>ブラウザ</li>
+<li><ul>
+<li>一通りの設定はブラウザだけで出来る</li>
+</ul></li>
+<li><ul>
+<li>写真の一覧画面は全ての写真が表示されるので多くなると大変</li>
+</ul></li>
+<li><ul>
+<li>ダウンロードアンカがあるのは良い</li>
+</ul></li>
+</ul>
+
+</div>
+<div class="step" data-y="800" data-x="4800">
+<h2>使い勝手比較</h2>
+
+<ul>
+<li>Eye-fi -> 安定，基本全部Upload</li>
+<li>Toshoba FlashAir -> Card に直アクセス，フォルダ単位に表示されるので単体DL が楽．</li>
+<li>PQI Air Card -> 選択したものをUp/Down/写真以外のメディアもOK</li>
+<li>Flucard(G2) -> 地雷</li>
+</ul>
+
+</div>
+<div class="step" data-y="1600" data-x="0">
+<h2>速度確認(サンディスク® モバイル ウルトラ™ microSDHC™ UHS-I カード 32GB)</h2>
+
+<p>*PQI Air card 経由</p>
+
+<blockquote>
+  <p>Timing buffered disk reads:  52 MB in  3.10 seconds =  16.77 MB/sec</p>
+</blockquote>
+
+<ul>
+<li>付属SD アダプタ経由</li>
+</ul>
+
+<blockquote>
+  <p>Timing buffered disk reads:  74 MB in  3.05 seconds =  24.23 MB/sec</p>
+</blockquote>
+
+<ul>
+<li>直接続</li>
+</ul>
+
+<blockquote>
+  <p>Timing buffered disk reads:  72 MB in  3.02 seconds =  23.86 MB/sec</p>
+</blockquote>
+
+<ul>
+<li><ul>
+<li>少しボトルネックになっている</li>
+</ul></li>
+</ul>
+
+</div>
+<div class="step" data-y="1600" data-x="1200">
+<h2>まとめ</h2>
+
+<ul>
+<li>今のところ全機能ブラウザだけで使える -> Linux でも♪</li>
+<li><ul>
+<li>FW Update がどうなるか…</li>
+</ul></li>
+<li><ul>
+<li>写真が増えてくると少し面倒</li>
+</ul></li>
+<li>スマートフォンアプリンはいまいち</li>
+<li><ul>
+<li>これからに期待</li>
+</ul></li>
+<li>ストレージ領域が別なのでストレージが壊れても交換できる</li>
+<li><ul>
+<li>Eye-fi Pro x2 は一度ストレージ部分が壊れて買い換えたこと有り…</li>
+</ul></li>
+<li>安い(単体で\3,980)</li>
+</ul>
+
+</div>
+<div class="step" data-y="1600" data-x="2400">
+<h2>Amazon Glacier をかじる</h2>
+
+<ul>
+<li>Amazon Glacier?</li>
+<li><ul>
+<li>AWS のオンラインストレージサービス</li>
+</ul></li>
+<li><ul>
+<li>月1GB で$0.01 位のサービス</li>
+</ul></li>
+<li><ul>
+<li>容量は無制限(1Vault 40T, Vaultは幾つでも)</li>
+</ul></li>
+<li><ul>
+<li>アップロードは無料</li>
+</ul></li>
+<li><ul>
+<li>Region は5箇所選択可能(Regionにより少し値段が違う)</li>
+</ul></li>
+<li><ul>
+<li>復元には復元リクエストを投げてから数時間必要&amp;容量に応じて別料金が発生</li>
+</ul></li>
+</ul>
+
+<p><a href="https://aws.amazon.com/jp/glacier/">Amazon Glacier (低価格アーカイブストレージサービス) | アマゾン ウェブ サービス（AWS 日本語）</a></p>
+
+</div>
+<div class="step" data-y="1600" data-x="3600">
+<h2>利用の流れ</h2>
+
+<ul>
+<li>AWS 申し込み</li>
+<li>AWS のWebConsole で希望Region にVault 作成(フォルダみたいな)</li>
+<li>Vault にデータアップロード</li>
+<li><ul>
+<li>この時ArchiveID が帰ってくる</li>
+</ul></li>
+<li>要らなくなったVault 削除</li>
+<li>データが飛んだらリクエストを投げてDL</li>
+</ul>
+
+</div>
+<div class="step" data-y="1600" data-x="4800">
+<h2>データアップロードプログラム</h2>
+
+<ul>
+<li>自分でプログラムを書く必要がある</li>
+<li>SDK は今のところ.NET / Java のみ</li>
+<li>とりあえずJava のサンプルをいじってどうにか</li>
+<li><ul>
+<li><a href="https://gist.github.com/3877342">Amazon Glacier Upload. 引数にUp先のendpoint, Vault とUp したいファイル名を指定する．ファイル名と，archiveID を返す． — Gist</a></li>
+</ul></li>
+<li>PogoPlug も対応しているらしい?</li>
+</ul>
+
+</div>
+<div class="step" data-y="2400" data-x="0">
+<h2>自動的にデータアップロードしたい</h2>
+
+<ul>
+<li>デイリーでバックアップ</li>
+<li>アーカイブにして</li>
+<li>暗号化してアップロード</li>
+<li><ul>
+<li>通信はhttps/格納はAES256 らしいけどAmazon は復号できる</li>
+</ul></li>
+</ul>
+
+</div>
+<div class="step" data-y="2400" data-x="1200">
+<h2>Ubuntu とかだとバックアップソフトがあるよね</h2>
+
+<ul>
+<li>Deja Dup を使うとバックアップ，アーカイブ，暗号化をやってくれて楽</li>
+<li>でも…</li>
+<li><ul>
+<li>キャッシュがでかくなる(256GBのストレージに20GB 超のキャッシュが)</li>
+</ul></li>
+<li><ul>
+<li>復元に失敗したことがある</li>
+</ul></li>
+<li>ということで自分でscript を書くことに</li>
+</ul>
+
+</div>
+<div class="step" data-y="2400" data-x="2400">
+<h2> 毎日のバックアップ</h2>
+
+<pre><code>$ rsync -avvce 'ssh -p 2222 -i /home/mk/.ssh/backup2micro' --delete --exclude-from=/home/mk/denylist --link-dest=192.168.1.102:/export/data/backup/x201s/rsync/home/`/bin/date -d '1 day ago' +\%Y\%m\%d`/ /home/mk 192.168.1.102:/export/data/backup/x201s/rsync/home/`/bin/date +\%Y\%m\%d`/
+</code></pre>
+
+<p>* rsync の<code>--link-dest</code> で前日との差分の実体だけをバックアップ他のファイルはハードリンクで見た目毎日フルバックアップ</p>
+
+</div>
+<div class="step" data-y="2400" data-x="3600">
+<h2>圧縮</h2>
+
+<pre><code>$ tar cf - /export/data/backup/x201s/rsync/home/`date +\%Y\%m\%d` | xz -9 &gt; /export/data/backup/x201s/rsync/home/x201s-home-`date +\%Y\%m\%d`.tar.xz
+</code></pre>
+
+<ul>
+<li>容量が少なければ安くなるので <code>xz -9</code> で圧縮</li>
+</ul>
+
+</div>
+<div class="step" data-y="2400" data-x="4800">
+<h2>暗号化</h2>
+
+<pre><code>$ gpg -e -r BD929CA7 /export/data/backup/x201s/rsync/home/x201s-home-20121012.tar.xz
+</code></pre>
+
+<ul>
+<li>自分の鍵で暗号化</li>
+</ul>
+
+</div>
+<div class="step" data-y="3200" data-x="0">
+<h2>アップロード</h2>
+
+<pre><code>$ time java -jar ~/GlacierUp.jar https://glacier.us-west-2.amazonaws.com/ x201s /export/data/backup/x201s/rsync/home/x201s-home-20121012.tar.xz.gpg
+https://glacier.us-west-2.amazonaws.com/,x201s,/export/data/backup/x201s/rsync/home/x201s-home-20121012.tar.xz.gpg,feTQn94CsSH3EL3O3MFjBwj69lRCvhTSmknxW9YJxhGSv0SAjxCxzVRcun7iCdHfdk7OjkKg5I_vodkIopUm7iP9BcqxuWMuyJ2RCXMP31WjOW_S0Fejn0hqoQ2MnYnHvwQh9AWOgQ
+
+real    19m43.371s
+user    3m49.422s
+sys     0m17.349s
+</code></pre>
+
+</div>
+<div class="step" data-y="3200" data-x="1200">
+<h2>容量</h2>
+
+<pre><code>$ ls -l /export/data/backup/x201s/rsync/home/x201s-home-20121012.tar.xz
+-rw-rw-r-- 1 mk mk 3471811192 10月 12 19:57 /export/data/backup/x201s/rsync/home/x201s-home-20121012.tar.xz
+</code></pre>
+
+<ul>
+<li>3.5GB で20分ほど</li>
+</ul>
+
+</div>
+<div class="step" data-y="3200" data-x="2400">
+<h2>未確認</h2>
+
+<ul>
+<li>アーカイブはハードリンクのもの(差分のみ)</li>
+<li>月一とかにフルバックアップをしたい</li>
+<li><ul>
+<li>tar のオプションである?</li>
+</ul></li>
+<li>古いアーカイブの削除処理</li>
+<li>復元プログラムを作らなきゃ</li>
+<li>アーカイブID の管理</li>
+</ul>
+
+</div>
+<div class="step" data-y="3200" data-x="3600">
+<h2>おまけ</h2>
+
+<ul>
+<li>AWS の認証にはトークンが利用可能</li>
+<li>Googleの2段階認証のソフトウェア生成器も使える</li>
+<li>Amazon.com で売っているGemalto のハードウェア生成器も使える</li>
+<li><ul>
+<li><a href="http://onlinenoram.gemalto.com/Ezio-Timebased-6Digit-Token-for-use/M/B002CRN5X8.htm">$12.99 + Shipping$4.28 = $17.27</a></li>
+</ul></li>
+</ul>
+
+<p><img sec+="AWS.jpg"></p>
+
+<p><a href="http://matoken.org/blog/blog/2012/08/30/aws-mfa/">AWS のハードウェアMFA を使ってみた | matoken's meme</a></p>
+
+</div>
+
+
+    <div id="overview" class="step" data-x="3000" data-y="1500" data-scale="10">
+    </div>
+
+</div>
+
+<div class="hint">
+    <p>Use a spacebar or arrow keys to navigate</p>
+</div>
+<script>
+if ("ontouchstart" in document.documentElement) { 
+    document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
+}
+</script>
+<script src="js/impress.js"></script>
+
+</body>
+</html>
+
